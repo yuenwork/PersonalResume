@@ -19,7 +19,21 @@ hr {
   border-top: 1px solid #DEDEDE;
 }
 
-body > main {
+ul,
+ol {
+  list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+}
+
+body>main {
   margin-top: -350px;
 }
 
@@ -105,6 +119,7 @@ body > main {
   margin-left: auto;
   margin-right: auto;
   background-color: #ffffff;
+  box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.5);
 }
 
 .userCard .welcome {
@@ -191,20 +206,81 @@ body > main {
   vertical-align: top;
 }
 
-body >main .downloadResume{
+body>main .downloadResume {
   font-size: 14px;
   line-height: 16px;
   padding: 21px 55px;
   display: inline-block;
-
+  border: #9a9da2 0.5px solid;
   border-radius: 2px;
   font-weight: bold;
-  color:#3d4451;
+  color: #3d4451;
   margin: 32px 0px;
   transition: box-shadow 0.2s;
+}
 
+body>main .downloadResume:hover {
+  box-shadow: 0px 4px 13px 0px rgba(0, 0, 0, 0.2)
+}
+
+.selfTntroduction {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  line-height: 1.8em;
+  font-size: 18px;
+}
+
+section.skills {
+  margin-top: 60px;
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+section.skills>h2 {
+  text-align: center;
+  color: #3d4451;
+  font-size: 34px;
+  line-height: 1.2em;
+  font-weight: 600;
+}
+
+section.skills>h3 {
+  font-size: 14px;
+  line-height: 1.1;
+  padding-left: 40px;
+}
+
+section.skills>ol {
+  padding: 42px 50px 10px;
+  margin-top: 30px;
+  box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.5);
+  background: #ffffff;
 
 }
-body > main .downloadResume:hover{
-  box-shadow: 0px 4px 13px 0px rgba(0, 0, 0, 0.2)
+
+section.skills>ol>li {
+  float: left;
+  width: 48%;
+  box-sizing: border-box;
+  padding-right: 4 0px;
+}
+section.skills>ol>li:nth-child(even) {
+float: right;
+}
+
+section.skills .processBar {
+  height: 3px;
+  background-color: #fae1e1;
+  border-radius: 2px;
+  margin:4px 0px 40px;
+}
+
+section.skills .processBar>.process {
+  background: #e6686a;
+  width: 50%;
+  height: 100%;
+  border-radius: 2px
 }
