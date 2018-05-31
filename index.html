@@ -121,48 +121,75 @@
                 </div>
             </li>
             <li>
-                <h3>HTML 5 &amp; CSS 3</h3>
+                <h3>JavaScript</h3>
+                <div class="processBar">
+                    <div class="process" style="width: 80%"></div>
+                </div>
+            </li>
+            <li>
+                <h3>jQuery</h3>
+                <div class="processBar">
+                    <div class="process" style="width: 30%"></div>
+                </div>
+            </li>
+            <li>
+                <h3>Vue.js</h3>
+                <div class="processBar">
+                    <div class="process" style="width: 20%"></div>
+                </div>
+            </li>
+            <li>
+                <h3>React.js</h3>
                 <div class="processBar">
                     <div class="process"></div>
                 </div>
             </li>
             <li>
-                <h3>HTML 5 &amp; CSS 3</h3>
+                <h3>Node.js</h3>
                 <div class="processBar">
-                    <div class="process"></div>
-                </div>
-            </li>
-            <li>
-                <h3>HTML 5 &amp; CSS 3</h3>
-                <div class="processBar">
-                    <div class="process"></div>
-                </div>
-            </li>
-            <li>
-                <h3>HTML 5 &amp; CSS 3</h3>
-                <div class="processBar">
-                    <div class="process"></div>
+                    <div class="process" style="width: 30%"></div>
                 </div>
             </li>
         </ol>
     </section>
-    <section>
+    <section class="portfolio">
         <h2>作品集</h2>
         <nav>
-            <ol>
-                <li>所有</li>
-                <li>框架</li>
-                <li>原生JS&amp;CSS</li>
+            <ol class="clearfix">
+                <li id="All">所有</li>
+                <li id="Framework">框架</li>
+                <li id="Vallina">原生JS&amp;CSS</li>
             </ol>
+            <div id="portfolioBar" class="bar state-1">
+                <div class="bar-inner"></div>
+            </div>
         </nav>
 
-        <div class="jobs">
-            <div class="big"></div>
-            <div class="small"></div>
-            <div class="small"></div>
+        <div class="works" style="height: 597px;">
+            <div class="big" style="top:0px;left: 0px;">
+                <img src="./imgs/1.jpg" alt="作品1" srcset="">
+            </div>
+            <div class="small" style="top:0px;left: 645px;">
+                <img src="./imgs/2.jpg" alt="作品2" srcset="">
+            </div>
+            <div class="small" style="top:312px;left: 645px;">
+                <img src="./imgs/3.jpg" alt="作品3" srcset="">
+            </div>
         </div>
 
     </section>
+
+    <script>
+        All.onclick = function () {
+            portfolioBar.className = "bar state-1"
+        }
+        Framework.onclick = function () {
+            portfolioBar.className = "bar state-2"
+        }
+        Vallina.onclick = function () {
+            portfolioBar.className = "bar state-3"
+        }
+    </script>
 </body>
 
 </html>
