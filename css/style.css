@@ -37,6 +37,63 @@ body>main {
   margin-top: -350px;
 }
 
+
+.loading {
+  width: 200px;
+  height: 200px;
+  position: relative;
+}
+
+.loading::before,
+.loading::after {
+  content: '';
+  position: absolute;
+  width: 0px;
+  height: 0px;
+  background: black;
+  border-radius: 50%;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  animation: s 1.5s linear infinite;
+}
+
+.loading::after {
+  animation-delay: 0.75s;
+}
+
+@keyframes s {
+  0% {
+      width: 0px;
+      height: 0px;
+      opacity: 1;
+  }
+  100% {
+      width: 100px;
+      height: 100px;
+      opacity: 0;
+  }
+}
+
+.site-welcome {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #888;
+  z-index: 1;
+  justify-content: center;
+  align-items: center;
+}
+
+.site-welcome.active {
+  display: flex;
+}
+
 .clearfix::after {
   content: '';
   display: block;
@@ -49,14 +106,20 @@ body>main {
   top: 0;
   left: 0;
   width: 100%;
+  transition: all 0.5s;
 }
-
+.topNavBar.stiky{
+  background: white;
+  padding: 10px 0;
+  z-index: 1;
+  box-shadow: 0 0 10px rgba(0,0,0,0.25)
+}
 .topNavBar-inner {
   padding: 0 16px;
 }
 
 .topNavBar nav {
-  padding-top: 7px;
+  padding-top: 5px;
 }
 
 .topNavBar nav>ul {
@@ -80,12 +143,25 @@ body>main {
   padding-top: 5px;
   padding-bottom: 5px;
   display: block;
+  position: relative;
 }
 
-.topNavBar nav>ul>li>a:hover {
-  border-bottom: 3px solid #e06567;
+.topNavBar nav>ul>li>a:hover::after {
+content: '';
+display: block;
+position: absolute;
+top:100%;
+width: 100%;
+left: 0;
+background: #e06567;
+height: 3px;
+animation: menuSlide .3s;
 }
 
+@keyframes menuSlide{
+  0%{width: 0};
+  100%{width: 100%;}
+}
 .topNavBar .logo {
   font-size: 24px;
   font-family: 'Arial Black';

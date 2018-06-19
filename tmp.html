@@ -1,15 +1,97 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
 <head>
-  <meta charset="utf-8">
-  <title>JS Bin</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <style>
+    *{
+    margin:  0;
+    padding: 0;
+}
+
+a{
+    text-decoration: none;
+}
+  #kbdcontainer{
+    
+    text-align: center;
+  }
+  #kbdcontainer >div {
+
+  }
+  #kbdcontainer >div >kbd{
+    border:1px solid red;
+    text-transform: uppercase;
+    width: 4em;
+    height: 4em;
+    display: inline-block;
+    position: relative;
+    margin: 10px;
+
+
+  }
+
+  kbd >button{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
+
+  </style>
+  <title>Document</title>
 </head>
 <body>
-    <form action="http://sc.ftqq.com/SCU27319Tc7563148f392cbb0dd90faf537ee60b35b0ff8099d27a.send?" method="post">
-      <input type="text" name="text">
-      <input type="text"name="desp">
-      <input type="submit" value="Submit">
-      </form>
+  <header></header>
+  <main>
+    <div id="kbdcontainer"></div>
+  </main>
+  <footer></footer>
+  <script>
+  var keys = {
+				'0': {0:'q',1:'w',2:'e',3:'r',4:'t',5:'y',6:'u',7:'i',8:'o',9:'p','length':10},
+				'1': {0:'a',1:'s',2:'d',3:'f',4:'g',5:'h',6:'j',7:'k',8:'l','length':9},
+				'2': {0:'z',1:'x',2:'c',3:'v',4:'b',5:'n',6:'m','length':7},
+				'length': 3
+			}
+			var hash = {'q': 'qq.com', 'w': 'weibo.com', 'e': 'ele.me', 'r': 'renren.com', 't': 'tianya.com', 'y': 'youtube.com', 'u': 'uc.com' , 'i': 'iqiyi.com', 'o': 'opera.com', 'p': undefined, 'a': 'acfun.tv', 's': 'sohu.com', 'z': 'zhihu.com', 'm': 'www.mcdonalds.com.cn'
+			}
 
+      if(localStorage){
+        hash = JSON.parse(localStorage.getItem('web')||'null')
+      }
+      var row= 0
+
+      while(row < keys['length']){
+       
+      div1 = document.createElement('div')
+      kbdcontainer.appendChild(div1)
+     var index2 = 0 
+     while(index2<keys[row]['length']){
+      kbd = document.createElement('kbd')
+      div1.appendChild(kbd)
+      kbd.textContent=keys[row][index2]
+      button = document.createElement('button')
+      kbd.appendChild(button)
+      button.textContent='编辑'
+      button.id = keys[row][index2]
+      button.onclick=function(e){
+        key = e.target.id
+        x=prompt('Please input a new URL')
+        hash[key]= x
+        localStorage.setItem('web',JSON.stringify(hash))
+      }
+
+      index2 = index2+1
+    }
+      row = row+1
+    }
+
+  document.onkeypress=function(e){
+    key=e.key
+    console.log(key)
+    window.open('http://'+String(hash[key]),"_blank")
+  }
+  </script>
 </body>
 </html>

@@ -16,11 +16,16 @@
             fill: currentColor;
             overflow: hidden;
         }
+
+
     </style>
 </head>
 
 <body>
-    <div class="topNavBar">
+    <div id='siteWelcome' class="site-welcome  active">
+        <div class="loading"></div>
+    </div>
+    <div id="topNavBar" class="topNavBar">
         <div class="topNavBar-inner clearfix">
             <a class="logo" href="#" alt="logo" style="float: left;">
                 <span class="rs">RS</span>
@@ -36,6 +41,11 @@
                     </li>
                     <li>
                         <a href="#">作品</a>
+                        <ul>
+                            <li>作品 1</li>
+                            <li>作品 2</li>
+                            <li>作品 3</li>
+                        </ul>
                     </li>
                     <li>
                         <a href="#">博客</a>
@@ -180,6 +190,16 @@
     </section>
 
     <script>
+        setTimeout(() => {
+            siteWelcome.classList.remove('active')
+        }, 1000);
+       window.onscroll=function(){ 
+           if(window.scrollY>0){
+            topNavBar.classList.add('stiky')
+        }else{
+            topNavBar.classList.remove('stiky')
+        }
+    }
         All.onclick = function () {
             portfolioBar.className = "bar state-1"
         }
