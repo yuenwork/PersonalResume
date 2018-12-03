@@ -61,7 +61,7 @@
             <a href="#">联系方式</a>
           </li>
           <li>
-            <a href="#">其他</a>
+            <a href="#MessageBoard">留言板</a>
           </li>
         </ul>
       </nav>
@@ -215,7 +215,20 @@
     </div>
 
   </section>
+  <section>
+    <h2 id="MessageBoard" style="text-align: center; color: #3d4451; font-size: 34px; line-height: 1.2; font-weight: 600;        ">留言</h2>
+    <ul id="messageList"></ul>  
+    <form id="postMessage" style="width:700px;padding-bottom: 50px;margin: auto;text-align: center;">
+          <input type="text" name="name">
+          
+          <input type="text" name = "content">
+          <input type="submit" value="提交">
+          <br>
+        </form>
+  </section>
+  <script src="//cdn.jsdelivr.net/npm/leancloud-storage@3.11.0/dist/av-min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/17.1.1/Tween.min.js"></script>
+  <script src="./message.js"></script>
   <script>
 // 添加 offset 类
 let specialTags = document.querySelectorAll('[data-x]')

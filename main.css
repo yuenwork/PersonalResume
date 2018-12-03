@@ -8,6 +8,7 @@ h1,h2,h3,h4,h5,h6{ font-weight: normal; }
 
 [data-x].active{
   outline: 10px solid red;
+  
 }
 [data-x].offset{
   transform: translateY(100px);
@@ -143,3 +144,15 @@ section.portfolio > nav .bar.state-2 .bar-inner{ margin-left: 65px; width: 50px;
 section.portfolio > nav .bar.state-3 .bar-inner{ margin-left: 140px; width: 96px; } 
 section.portfolio .works{ position: relative; } 
 section.portfolio .works > .big, section.portfolio .works > .small { position: absolute; }
+
+#messageList{
+  width:40vw;
+  margin:0 auto;
+}
+#messageList>li{
+  padding: 5px;
+  border-bottom: #3d4451 1px solid
+}
+#postMessage{
+  padding-top: 30px;
+}
